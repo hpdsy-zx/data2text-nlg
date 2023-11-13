@@ -77,4 +77,66 @@ class Song20PercentDataset(SongDataset):
         dataset_dir = os.path.join('data','song')
         if partition == 'train':
             dataset_path = os.path.join('data','song')
-        
+            dataset_path = os.path.join(dataset_dir,'train_sampled_0.2.csv')
+        else:
+            dataset_path = super(Song20PercentDataset, Song20PercentDataset).get_data_file_path(partition)
+
+        return dataset_path
+
+class Song10PercentDataset(SongDataset):
+    """A 10% sample of the Song dataset"""
+    name = 'song_10_percent'
+
+    @staticmethod
+    def get_data_file_path(partition):
+        dataset_dir = os.path.join('data','song')
+        if partition == 'train':
+            dataset_path = os.path.join('data','song')
+            dataset_path = os.path.join(dataset_dir,'train_sampled_0.1.csv')
+        else:
+            dataset_path = super(Song10PercentDataset, Song10PercentDataset).get_data_file_path(partition)
+
+        return dataset_path
+
+class Song5PercentDataset(SongDataset):
+    """A 5% sample of the Song dataset."""
+    name = 'song_5_percent'
+
+    @staticmethod
+    def get_data_file_path(partition):
+        dataset_dir = os.path.join('data', 'song')
+        if partition == 'train':
+            dataset_path = os.path.join(dataset_dir, 'train_sampled_0.05.csv')
+        else:
+            dataset_path = super(Song5PercentDataset, Song5PercentDataset).get_data_file_path(partition)
+
+        return dataset_path
+    
+class Song2PercentDataset(SongDataset):
+    """A 2% sample of the Song dataset."""
+    name = 'song_2_percent'
+
+    @staticmethod
+    def get_data_file_path(partition):
+        dataset_dir = os.path.join('data', 'song')
+        if partition == 'train':
+            dataset_path = os.path.join(dataset_dir, 'train_sampled_0.02.csv')
+        else:
+            dataset_path = super(Song2PercentDataset, Song2PercentDataset).get_data_file_path(partition)
+
+        return dataset_path
+    
+class Song1PercentDataset(SongDataset):
+    """A 1% sample of the Song dataset"""
+    name = 'song_1_percent'
+
+    @staticmethod
+    def get_data_file_path(partition):
+        dataset_dir = os.path.join('data','song')
+        if partition == 'train':
+            dataset_path = os.path.join('data','song')
+            dataset_path = os.path.join(dataset_dir,'train_sampled_0.01.csv')
+        else:
+            dataset_path = super(Song1PercentDataset, Song1PercentDataset).get_data_file_path(partition)
+
+        return dataset_path
