@@ -345,7 +345,7 @@ if __name__ == '__main__':
     #align_slots(r'/d/Git/data2text-nlg/data/rest_e2e', 'devset.csv', E2EDataset, serialize_pos_info=False)
 
     input_path = 'D:\data2text-nlg\data\song'
-    file_name = 'song_full(1).csv'
+    file_name = 'song_full.csv'
 
     ser,df = score_slot_realizations(input_path,file_name,SongDataset,f'',slot_level=True)
 
