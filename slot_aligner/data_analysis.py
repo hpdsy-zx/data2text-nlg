@@ -1,12 +1,16 @@
 from collections import Counter, OrderedDict
 import json
 import os
+import re
+import sys
 import pandas as pd
 
+import data_loader
 from constants import SlotNameConversionMode
 from dataset_loaders.e2e import E2EDataset, E2ECleanedDataset
 from dataset_loaders.multiwoz import MultiWOZDataset
 from dataset_loaders.viggo import ViggoDataset
+from dataset_loaders.song import SongDataset
 from slot_aligner.slot_alignment import count_errors, find_alignment
 
 
@@ -42,7 +46,7 @@ def align_slots(data_dir, filename, dataset_class, serialize_pos_info=False):
     df_data.to_csv(out_file_path, index=False, encoding='utf-8-sig')
 
 
-def score_slot_realizations(data_dir, predictions_file, dataset_class, slot_level=False, verbose=False):
+def score_slot_realizations(data_dir, predictions_file, dataset_class, num, slot_level=False, verbose=False):
     """Analyzes unrealized and hallucinated slot mentions in the utterances."""
 
     error_counts = []
@@ -56,20 +60,30 @@ def score_slot_realizations(data_dir, predictions_file, dataset_class, slot_leve
     mrs_processed = dataset_class.preprocess_mrs(
         mrs_raw, as_lists=True, lowercase=False, slot_name_conversion=SlotNameConversionMode.SPECIAL_TOKENS)
     utterances = df_data.iloc[:, 1].fillna('').to_list()
-
+    lengths = []
+    sacc = []
     for mr_as_list, utt in zip(mrs_processed, utterances):
         # Count the missing and hallucinated slots in the utterance
+        length = len(mr_as_list) - 1
+        lengths.append(len(mr_as_list) - 1)
         num_errors, cur_incorrect_slots, cur_duplicate_slots, num_content_slots = count_errors(
             utt, mr_as_list, dataset_class.name, verbose=verbose)
         error_counts.append(num_errors)
+        sacc.append(100 * ((length - num_errors) / length))
         incorrect_slots.append(', '.join(cur_incorrect_slots))
         duplicate_slots.append(', '.join(cur_duplicate_slots))
         total_content_slots += num_content_slots
 
     # Save the MRs and utterances along with their slot error indications to a new CSV file
-    df_data['errors'] = error_counts
-    df_data['incorrect'] = incorrect_slots
-    df_data['duplicate'] = duplicate_slots
+    # df_data['errors'] = error_counts
+    # df_data['incorrect'] = incorrect_slots
+    # df_data['duplicate'] = duplicate_slots
+    df_data['errors' + num] = error_counts
+    df_data['incorrect' + num] = incorrect_slots
+    df_data['duplicate' + num] = duplicate_slots
+    df_data["mr_len"] = lengths
+    df_data[f"SACC{num}"] = sacc
+
     out_file_path = os.path.splitext(os.path.join(data_dir, predictions_file))[0] + ' [errors].csv'
     df_data.to_csv(out_file_path, index=False, encoding='utf-8-sig')
 
@@ -85,7 +99,7 @@ def score_slot_realizations(data_dir, predictions_file, dataset_class, slot_leve
     else:
         print(f'{round(100 * ser, 2)}%')
 
-    return ser
+    return ser,df_data
 
 
 def score_emphasis(dataset, filename):
@@ -328,7 +342,22 @@ def analyze_contrast_relations(dataset, filename):
 
 
 if __name__ == '__main__':
-    align_slots(r'/d/Git/data2text-nlg/data/rest_e2e', 'devset.csv', E2EDataset, serialize_pos_info=False)
+    #align_slots(r'/d/Git/data2text-nlg/data/rest_e2e', 'devset.csv', E2EDataset, serialize_pos_info=False)
+
+    input_path = 'D:\data2text-nlg\data\song'
+    file_name = 'song_full(1).csv'
+
+    ser,df = score_slot_realizations(input_path,file_name,SongDataset,f'',slot_level=True)
+
+    '''
+    calculate animals ser
+    '''
+    # input_path = 'D:\data2text-nlg\data\\animals'
+    # file_name = 'chatgpt_alldas.csv'
+    #
+    # ser = score_slot_realizations(input_path,file_name,SongDataset,f'',slot_level=True)
+
+
 
     # ----
 

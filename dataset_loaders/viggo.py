@@ -163,3 +163,4 @@ class Viggo1PercentDataset(ViggoDataset):
             dataset_path = super(Viggo1PercentDataset, Viggo1PercentDataset).get_data_file_path(partition)
 
         return dataset_path
+
