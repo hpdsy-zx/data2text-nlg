@@ -3,13 +3,12 @@ import json
 import os
 import pandas as pd
 
-from data2text_nlg.constants import SlotNameConversionMode
-from data2text_nlg.dataset_loaders.e2e import E2EDataset, E2ECleanedDataset
-from data2text_nlg.dataset_loaders.multiwoz import MultiWOZDataset
-from data2text_nlg.dataset_loaders.viggo import ViggoDataset
-from data2text_nlg.dataset_loaders.rnnlg import LaptopDataset
-from data2text_nlg.dataset_loaders.rnnlg import TVDataset
-from data2text_nlg.slot_aligner.slot_alignment import count_errors, find_alignment
+from constants import SlotNameConversionMode
+from dataset_loaders.e2e import E2EDataset, E2ECleanedDataset
+from dataset_loaders.multiwoz import MultiWOZDataset
+from dataset_loaders.viggo import ViggoDataset
+from dataset_loaders.song import SongDataset
+from slot_aligner.slot_alignment import count_errors, find_alignment
 
 
 def align_slots(data_dir, filename, dataset_class, serialize_pos_info=False):
@@ -300,7 +299,7 @@ def analyze_contrast_relations(dataset, filename):
         slot_before = None
         slot_after = None
 
-        for contrast_co``````````````````````````````````````nn in contrast_connectors:
+        for contrast_conn in contrast_connectors:
             contrast_pos = utt.find(contrast_conn)
             if contrast_pos >= 0:
                 slot_before = None
@@ -394,17 +393,17 @@ if __name__ == '__main__':
     from os.path import isfile, join
     #print(os.listdir("data2text_nlg\data\\video_game\\bulk"))
     #input_path = "~\PycharmProjects\Jurassic\data2text_nlg\data\\tv_rnnlg"
-    input_path = '~\PycharmProjects\Jurassic\data2text_nlg\data\\viggo'
+    # input_path = '~\PycharmProjects\Jurassic\data2text_nlg\data\\viggo'
     #onlyfiles = [f for f in os.listdir() if os.path.isfile(os.path.join(input_path, f))]
    # files = [filenames for (dirpath, dirnames, filenames) in os.walk(input_path) ]
     #print(files)
     #C:\Users\arami\PycharmProjects\Jurassic\liren_s code\experiments\ex19\viggo_test_overgen_5_output.csv
 
-    file_name = "chatgpt_rf2da.csv"
-    # #\
-    convert_format(input_path, file_name, f'text', f'{file_name}_each.csv')
-
-    ser, df = score_slot_realizations(input_path, f'{file_name}_each.csv', ViggoDataset, f'',  slot_level=True)
+    # file_name = "chatgpt_rf2da.csv"
+    # # #\
+    # convert_format(input_path, file_name, f'text', f'{file_name}_each.csv')
+    #
+    # ser, df = score_slot_realizations(input_path, f'{file_name}_each.csv', ViggoDataset, f'',  slot_level=True)
     #1111111111111111111111111111111111111111111111111111111111
     # # run_for_horizontal(input_path+"1prompt_callisonDIAL", "viggo-test-specific1_newCallison.csv", '1_newCallison', '1_newCallison')
     # # run_for_horizontal(input_path + "5prompt_callisonDIAL", "viggo-test-specific5_newCallison.csv", '5_newCallison',
@@ -420,3 +419,7 @@ if __name__ == '__main__':
     #     convert_format(input_path, i, f'text', f'{i.split(" - with DA.csv")[0]}_each.csv')
     #     ser, df = score_slot_realizations(input_path, f'{i.split(" - with DA.csv")[0]}_each.csv', ViggoDataset, f'all',
     #                                     slot_level=True)
+    input_path = 'D:\data2text-nlg\data\song'
+    file_name = '1_hops_final_ranked - 1_hops_final_ranked.csv'
+
+    ser, df = score_slot_realizations(input_path, file_name, SongDataset, f'', slot_level=True)
