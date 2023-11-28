@@ -92,8 +92,9 @@
          "Harry Styles", 
          "Lady Gaga", 
          "Berlin", 
-         "Blur", 
-         "Skrillex and Korn",
+         "Blur",
+         "Skrillex",
+         "Korn",
          "Arcade Fire", 
          "Major Lazer, El Alfa, J Balvin", 
          "Bebe Rexha", 
@@ -377,7 +378,7 @@
                 "musical work/composition", 
                 "single, song", 
                 "single"], 
-"is_from_album": [false, 
+"is_from_album": [false,
                   true]
 
 }
