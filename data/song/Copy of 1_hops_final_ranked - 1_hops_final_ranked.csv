@@ -1,7 +1,7 @@
 mr,text
 "confirm(name[We Are the World], producer[Michael Omartian])"," Are you referring to the song We Are the World, produced by Michael Omartian?"
 "confirm(name[Apple Shampoo], instance_of[musical work/composition])",Are you referring to the musical work/composition of Apple Shampoo?
-"confirm(name[Style], is_from_album[true])"," Are you referring to Style, the song from an album?"
+"confirm(name[Style], is_from_album[True])"," Are you referring to Style, the song from an album?"
 "confirm(name[Get Up!], performer[Skrillex, Korn])"," Are you referring to the song Get Up!, by Skrillex and Korn?"
 "confirm(name[Wanna Get to Know You], performer[Joe, G-Unit])",Are you referring to the song Wanna Get to Know You by Joe and G-Unit?
 "confirm(name[Seven Nation Army], producer[Jack White])",Are you referring to the song Seven Nation Army produced by Jack White?
