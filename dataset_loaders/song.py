@@ -46,6 +46,8 @@ class SongDataset(MRToTextDataset):
             slot_name_verbalized = slots_to_override[slot_name]
         else:
             slot_name_verbalized = slot_name.replace('_', ' ')
+            for tok in ['album']:
+                slot_name_verbalized = re.sub(r'\b{}\b'.format(re.escape(tok)), tok.capitalize(), slot_name_verbalized)
 
         return slot_name_verbalized
     
