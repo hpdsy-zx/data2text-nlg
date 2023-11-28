@@ -344,11 +344,14 @@ def analyze_contrast_relations(dataset, filename):
 if __name__ == '__main__':
     #align_slots(r'/d/Git/data2text-nlg/data/rest_e2e', 'devset.csv', E2EDataset, serialize_pos_info=False)
 
+    # input_path = 'D:\data2text-nlg\data\song'
+    # file_name = '1_hops_final_ranked - 1_hops_final_ranked.csv'
+    #
+    # ser,df = score_slot_realizations(input_path,file_name,SongDataset,f'',slot_level=True)
     input_path = 'D:\data2text-nlg\data\song'
-    file_name = '1_hops_final_ranked - 1_hops_final_ranked.csv'
+    file_name = 'Copy of 1_hops_final_ranked - 1_hops_final_ranked.csv'
 
-    ser,df = score_slot_realizations(input_path,file_name,SongDataset,f'',slot_level=True)
-
+    ser, df = score_slot_realizations(input_path, file_name, SongDataset, f'', slot_level=True)
     '''
     calculate animals ser
     '''

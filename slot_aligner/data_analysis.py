@@ -420,6 +420,6 @@ if __name__ == '__main__':
     #     ser, df = score_slot_realizations(input_path, f'{i.split(" - with DA.csv")[0]}_each.csv', ViggoDataset, f'all',
     #                                     slot_level=True)
     input_path = 'D:\data2text-nlg\data\song'
-    file_name = 'Copy of 1_hops_final_ranked - 1_hops_final_ranked (1)'
+    file_name = 'Copy of 1_hops_final_ranked - 1_hops_final_ranked.csv'
 
     ser, df = score_slot_realizations(input_path, file_name, SongDataset, f'', slot_level=True)
