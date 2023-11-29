@@ -1,7 +1,7 @@
 ﻿mr,text,errors,incorrect,duplicate,mr_len,SACC
 "confirm(name[We Are the World], producer[Michael Omartian])"," Are you referring to the song We Are the World, produced by Michael Omartian?",0,,,2,100.0
 "confirm(name[Apple Shampoo], instance_of[musical work/composition])",Are you referring to the musical work/composition of Apple Shampoo?,0,,,2,100.0
-"confirm(name[Style], is_from_album[True])"," Are you referring to Style, the song from an album?",1,is_from_album,,2,50.0
+"confirm(name[Style], is_from_album[yes])"," Are you referring to Style, the song from an album?",1,is_from_album,,2,50.0
 "confirm(name[Get Up!], performer[Skrillex, Korn])"," Are you referring to the song Get Up!, by Skrillex and Korn?",1,performer,,2,50.0
 "confirm(name[Wanna Get to Know You], performer[Joe, G-Unit])",Are you referring to the song Wanna Get to Know You by Joe and G-Unit?,1,performer,,2,50.0
 "confirm(name[Seven Nation Army], producer[Jack White])",Are you referring to the song Seven Nation Army produced by Jack White?,0,,,2,100.0
@@ -1773,7 +1773,7 @@
 "verify_attribute(name[Macarena], rating[excellent], is_from_album[True], performer[Los del Río])",You said you love Macarena. Do you also enjoy other songs by Los del Río?,2,"rating, is_from_album",,4,50.0
 "verify_attribute(name[I], rating[excellent], from_album[To Pimp a Butterfly], is_from_album[True])",I know you love I. Do you think To Pimp a Butterfly is an amazing album overall?,2,"rating, is_from_album",,4,50.0
 "verify_attribute(name[The Way I Are], rating[excellent], instance_of[single], record_label[Warner Bros. Records])",I know you love The Way I Are. Do you think all of Warner Bros. Records singles are great?,2,"rating, instance_of",,4,50.0
-request_attribute(is_from_album[]),What album is the song from?,1,is_from_album,,1,0.0
+request_attribute(is_from_album[]),What album is the song from?,0,,,1,100.0
 request_attribute(publication_year[]),What year was your favorite song released?,1,publication_year,,1,0.0
 request_attribute(performer[]),Who is your favorite artist or performer?,0,,,1,100.0
 request_attribute(from_album[]),What is your favorite song from the album?,1,from_album,,1,0.0

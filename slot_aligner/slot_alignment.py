@@ -139,6 +139,7 @@ def get_slot_mention_alternatives(slot, all_slots):
         'type': ['type', 'types', 'kind', 'kinds', 'sort', 'sorts', 'particular', 'specific', 'different', 'other',
                  'anything else', 'something else', 'what', 'which'],
         'weightrange': ['weight'],
+        'is_from_album':['album']
     }
 
     alternatives = []
@@ -319,6 +320,10 @@ def find_slot_realization(text, text_tok, slot, value, domain, mr, ignore_dupes=
             elif slot in ['esrb', 'rating']:
                 pos = align_scalar_slot(text, text_tok, slot, value, slot_stem_only=False)
             elif slot in ['available_on_steam', 'has_linux_release', 'has_mac_release', 'has_multiplayer']:
+                pos = align_boolean_slot(text, text_tok, slot, value)
+
+        elif 'song' in domain:
+            if slot == 'is_in_album':
                 pos = align_boolean_slot(text, text_tok, slot, value)
 
         if pos < 0:

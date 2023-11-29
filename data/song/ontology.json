@@ -281,7 +281,8 @@
                      "2019", 
                      "2021", 
                      "2022"], 
-"genres": ["hip hop music", 
+"genres": ["hip hop music",
+           "hip hop",
            "pop punk", 
            "art pop, indie pop", 
            "nu metal, dubstep", 
@@ -378,7 +379,8 @@
                 "musical work/composition", 
                 "single, song", 
                 "single"], 
-"is_from_album": ["True",
-                  "False"]
+"is_from_album": ["yes",
+                  "no",
+                  ""]
 
 }
