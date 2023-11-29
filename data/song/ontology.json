@@ -379,8 +379,8 @@
                 "musical work/composition", 
                 "single, song", 
                 "single"], 
-"is_from_album": ["yes",
-                  "no",
+"is_from_album": ["no",
+                  "yes",
                   ""]
 
 }

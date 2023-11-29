@@ -323,7 +323,7 @@ def find_slot_realization(text, text_tok, slot, value, domain, mr, ignore_dupes=
                 pos = align_boolean_slot(text, text_tok, slot, value)
 
         elif 'song' in domain:
-            if slot == 'is_in_album':
+            if slot == 'is_from_album':
                 pos = align_boolean_slot(text, text_tok, slot, value)
 
         if pos < 0:
