@@ -103,7 +103,8 @@
       "liked",
       "positive",
       "solid",
-      "well"
+      "well",
+      "great"
     ],
     "average": [
       "3 out of",
@@ -270,6 +271,38 @@
   "type": {
     "television": [
       "tv"
+    ]
+  },
+
+  "instance_of": {
+    "musical work/composition": [
+      "musical work",
+      "musical composition",
+      "work",
+      "works",
+      "composition",
+      "musical work/composition",
+      "song",
+      "songs"
+    ],
+    "song": [
+      "songs"
+    ]
+  },
+    "specifier": {
+    "catchy": [
+      "catchiest"
+    ],
+    "dull": [
+      "dullest"
+    ],
+    "uninspired": [
+      "uninspiring"
+    ]
+  },
+  "genres": {
+    "pop music":[
+      "pop"
     ]
   }
 }

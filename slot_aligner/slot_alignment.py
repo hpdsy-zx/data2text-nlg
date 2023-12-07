@@ -139,7 +139,8 @@ def get_slot_mention_alternatives(slot, all_slots):
         'type': ['type', 'types', 'kind', 'kinds', 'sort', 'sorts', 'particular', 'specific', 'different', 'other',
                  'anything else', 'something else', 'what', 'which'],
         'weightrange': ['weight'],
-        'is_from_album':['album']
+        # 'is_from_album': ['album','albums'],
+        'performer': ['performer']
     }
 
     alternatives = []
@@ -264,6 +265,7 @@ def find_slot_realization(text, text_tok, slot, value, domain, mr, ignore_dupes=
                     break
     else:
         # E2E restaurant dataset slots
+
         if 'rest_e2e' in domain:
             if slot == 'familyfriendly':
                 pos = align_boolean_slot(text, text_tok, slot, value)
@@ -323,9 +325,21 @@ def find_slot_realization(text, text_tok, slot, value, domain, mr, ignore_dupes=
                 pos = align_boolean_slot(text, text_tok, slot, value)
 
         elif 'song' in domain:
-            if slot == 'is_from_album':
+            if slot in ['performer','producer']:
+                pos = align_list_with_conjunctions_slot(text, text_tok, slot, value, match_all=(not soft_align))
+            elif slot in ['instance_of','specifier']:
+                pos = align_list_slot(text, text_tok, slot, value, match_all=(not soft_align), mode='first_word')
+            elif slot in ['is_from_album']:
                 pos = align_boolean_slot(text, text_tok, slot, value)
-
+                # print(1)
+            elif slot in ['rating']:
+                pos = align_scalar_slot(text, text_tok, slot, value, slot_stem_only=False)
+            elif slot == 'genres':
+                pos = align_list_slot(text, text_tok, slot, value, match_all=(not soft_align), mode='first_word')
+            elif slot == 'from_album':
+                pos = align_list_slot(text, text_tok, slot, value,mode='first_word')
+                # pos = align_list_with_conjunctions_slot(text, text_tok, slot, value, match_all=(not soft_align))
+                # print(value)
         if pos < 0:
             # Fall back to finding a verbatim slot mention
             pos, is_dupe = _match_keywords_in_text(value, text, ignore_dupes=ignore_dupes)

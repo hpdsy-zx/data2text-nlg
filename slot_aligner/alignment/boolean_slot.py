@@ -24,29 +24,34 @@ contrast_cues = [
 ]
 
 
-def align_boolean_slot(text, text_tok, slot, value, true_val='yes', false_val='no'):
+def align_boolean_slot(text, text_tok, slot, value, true_val='true', false_val='false'):
     pos = -1
     text = re.sub(r'\'', '', text)
 
     # Get the words that possibly realize the slot
     slot_stems = __get_boolean_slot_stems(slot)
-
+    # print(value)
     # Search for all possible slot realizations
+    # print(len(slot_stems))
     for slot_stem in slot_stems:
         idx, pos = find_first_in_list(slot_stem, text_tok)
+        # print(pos)
         if pos >= 0:
             if value == true_val:
+                # print(value)
                 # Match an instance of the slot stem without a preceding negation
                 if not __find_negation(text, text_tok, idx, pos, expected_true=True, after=False):
                     return pos
             else:
                 # Match an instance of the slot stem with a preceding or a following negation
+                # print(value)
                 if __find_negation(text, text_tok, idx, pos, expected_true=False, after=True):
                     return pos
 
     # If no match found and the value ~ False, search for alternative expressions of the opposite
     if pos < 0 and value == false_val:
         slot_antonyms = __get_boolean_slot_antonyms(slot)
+        # print(value)
         for slot_antonym in slot_antonyms:
             if ' ' in slot_antonym:
                 pos = text.find(slot_antonym)
@@ -130,7 +135,8 @@ def __get_boolean_slot_stems(slot):
         'has_multiplayer': ['multiplayer', 'friends', 'others'],
         'available_on_steam': ['steam'],
         'has_linux_release': ['linux'],
-        'has_mac_release': ['mac']
+        'has_mac_release': ['mac'],
+        'is_from_album':['album','albums','from']
     }
 
     return slot_stems.get(slot, [])
@@ -140,7 +146,8 @@ def __get_boolean_slot_antonyms(slot):
     slot_antonyms = {
         'familyfriendly': ['adult', 'adults'],
         'isforbusinesscomputing': ['personal', 'general', 'home', 'nonbusiness'],
-        'has_multiplayer': ['single player']
+        'has_multiplayer': ['single player'],
+        'is_from_album':[' ']
     }
 
     return slot_antonyms.get(slot, [])

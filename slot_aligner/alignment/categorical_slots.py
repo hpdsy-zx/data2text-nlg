@@ -54,21 +54,32 @@ def find_value_alternative(text, text_tok, value, alternatives, mode, allow_plur
         value_alternatives = value.split(' ')  # List of elements
     elif mode == 'all_words':
         value_alternatives = [value.split(' ')]  # List of single-element lists
+        # print(value)
+        # print(value_alternatives)
     else:
         value_alternatives = [value]  # Single-element list
 
     # Merge the tokens with the item's alternatives
+    # print(value_alternatives)
+    # print(value)
+    # print(1)
+    # print(value_alternatives)
+    # print(2)
     if value in alternatives:
         value_alternatives += alternatives[value]
+        print(value_alternatives)
+        print(1)
 
     if allow_plural:
         value_alternatives += [_plural(value_alt) for value_alt in value_alternatives]
 
     # Iterate over individual tokens of the item
     for value_alt in value_alternatives:
+        print(value_alt)
         # If the item is composed of a single token, convert it to a single-element list
         if not isinstance(value_alt, list):
             value_alt = [value_alt]
+
 
         # Keep track of the positions of all the item's tokens
         positions = []
@@ -85,6 +96,7 @@ def find_value_alternative(text, text_tok, value, alternatives, mode, allow_plur
         if all([p >= 0 for p in positions]):
             leftmost_pos = min(positions)
             break
+        # print(leftmost_pos)
 
     return leftmost_pos
 

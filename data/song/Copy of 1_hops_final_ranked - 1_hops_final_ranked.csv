@@ -1,7 +1,7 @@
 mr,text
 "confirm(name[We Are the World], producer[Michael Omartian])"," Are you referring to the song We Are the World, produced by Michael Omartian?"
 "confirm(name[Apple Shampoo], instance_of[musical work/composition])",Are you referring to the musical work/composition of Apple Shampoo?
-"confirm(name[Style], is_from_album[true])"," Are you referring to Style, the song from an album?"
+"confirm(name[Style], is_from_album[True])"," Are you referring to Style, the song from an album?"
 "confirm(name[Get Up!], performer[Skrillex, Korn])"," Are you referring to the song Get Up!, by Skrillex and Korn?"
 "confirm(name[Wanna Get to Know You], performer[Joe, G-Unit])",Are you referring to the song Wanna Get to Know You by Joe and G-Unit?
 "confirm(name[Seven Nation Army], producer[Jack White])",Are you referring to the song Seven Nation Army produced by Jack White?
@@ -81,7 +81,7 @@ mr,text
 "confirm(name[Evolution], producer[Atticus Ross])",Are you referring to the song Evolution produced by Atticus Ross?
 "confirm(name[Somebody That I Used to Know], genres[indie pop])",Are you talking about the indie pop song Somebody That I Used to Know?
 "confirm(name[Blurred Lines], is_from_album[True])",Are you referring to Blurred Lines which is from an album?
-"confirm(name[Black Barbies], is_from_album[False])",Are you talking about the song Black Barbies?
+"confirm(name[Black Barbies], is_from_album[False])",Are you talking about the song Black Barbies
 "confirm(name[Anti-Hero], from_album[Midnights])",Are you referring to the song Anti-Hero from Midnights?
 "confirm(name[Money for Nothing], performer[Dire Straits])"," Are you referring to the Dire Straits song, Money for Nothing?"
 "confirm(name[Habibi], performer[Faydee, Shaggy])"," Are you referring to Habibi, the song by Faydee and Shaggy?"

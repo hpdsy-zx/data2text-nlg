@@ -32,7 +32,7 @@ def align_list_slot(text, text_tok, slot, value, match_all=True, mode='exact_mat
 
 
 def align_list_with_conjunctions_slot(text, text_tok, slot, value, match_all=True):
-    separators = [',', 'and', 'with']
+    separators = [',', 'and', 'with',' ']
 
     value_tok = word_tokenize(value)
     value_items = []

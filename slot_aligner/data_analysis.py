@@ -8,6 +8,7 @@ from dataset_loaders.e2e import E2EDataset, E2ECleanedDataset
 from dataset_loaders.multiwoz import MultiWOZDataset
 from dataset_loaders.viggo import ViggoDataset
 from dataset_loaders.song import SongDataset
+from dataset_loaders.board_game import BoardGameDataset
 from slot_aligner.slot_alignment import count_errors, find_alignment
 
 
@@ -123,6 +124,7 @@ def score_slot_realizations(data_dir, predictions_file, dataset_class, num, slot
         lengths.append(len(mr_as_list) - 1)
         num_errors, cur_incorrect_slots, cur_duplicate_slots, num_content_slots = count_errors(
             utt, mr_as_list, dataset_class.name, verbose=verbose)
+        # print(dataset_class.name)
         error_counts.append(num_errors)
         sacc.append(100 * ((length - num_errors) / length))
         incorrect_slots.append(', '.join(cur_incorrect_slots))
@@ -473,8 +475,16 @@ if __name__ == '__main__':
     #     convert_format(input_path, i, f'text', f'{i.split(" - with DA.csv")[0]}_each.csv')
     #     ser, df = score_slot_realizations(input_path, f'{i.split(" - with DA.csv")[0]}_each.csv', ViggoDataset, f'all',
     #                                     slot_level=True)
-    input_path = 'D:\data2text-nlg\data\song'
-    file_name = 'Copy of 1_hops_final_ranked - 1_hops_final_ranked.csv'
 
-    ser, df = score_slot_realizations(input_path, file_name, SongDataset, f'', slot_level=True)
-    print(SongDataset.name)
+    input_path = 'D:\data2text - nlg\data\\board_game'
+    file_name = 'board_gameOneHop.csv'
+
+    ser, df = score_slot_realizations(input_path, file_name, BoardGameDataset, f'', slot_level=True)
+    print(BoardGameDataset.name)
+
+    #song
+    # input_path = 'D:\data2text-nlg\data\song'
+    # file_name = 'Copy of 1_hops_final_ranked - 1_hops_final_ranked.csv'
+    #
+    # ser, df = score_slot_realizations(input_path, file_name, SongDataset, f'', slot_level=True)
+    # print(SongDataset.name)

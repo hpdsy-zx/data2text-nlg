@@ -34,7 +34,8 @@ def find_all_in_list(val, lst):
 
 
 def get_slot_value_alternatives(slot):
-    slot_alternatives_path = os.path.join('slot_aligner', 'alignment', 'alternatives.json')
+    # slot_alternatives_path = os.path.join('slot_aligner', 'alignment', 'alternatives.json')
+    slot_alternatives_path = "D:\data2text-nlg\slot_aligner\\alignment\\alternatives.json"
     with open(slot_alternatives_path, 'r') as f_alternatives:
         alternatives_dict = json.load(f_alternatives)
 

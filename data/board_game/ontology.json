@@ -1,0 +1,178 @@
+{
+    "name": [
+        "Stratego",
+        "Cosmic Encounter",
+        "Scotland Yard",
+        "Betrayal at House on the Hill",
+        "HeroQuest",
+        "Dune",
+        "Lord of the Rings",
+        "Battle Masters",
+        "Punaisten ja valkoisten taistelu Suomessa 1918",
+        "Monopoly",
+        "Spirit Island",
+        "Carcassonne",
+        "Risk",
+        "Barbarossa",
+        "Crossings",
+        "Afrikan t?hti",
+        "Chicago",
+        "Axis and Allies",
+        "Yomi",
+        "Thurn and Taxis",
+        "Mystery Motive for Murder",
+        "Sherlock Holmes Consulting Detective",
+        "Descent Journeys in the Dark",
+        "Mangala",
+        "Star Realms",
+        "War of 1812",
+        "Enchanted Forest",
+        "Twilight Struggle",
+        "A Game of Thrones"
+    ],
+    "average_rating": [
+        "average",
+        "good",
+        "poor",
+        "excellent"
+    ],
+    "min_playing_time": [
+        "45.0",
+        "180.0",
+        "20.0",
+        "90.0",
+        "60.0",
+        "30.0",
+        " "
+    ],
+    "max_play_time": [
+        "45.0",
+        "480.0",
+        "60.0",
+        "90.0",
+        "240.0",
+        "120.0",
+        " "
+    ],
+    "complexity_rating": [
+        "moderate",
+        "simple",
+        "complex",
+        "advanced"
+    ],
+    "alternate_names": [
+        "Raya's Journey: An Enchanted Forest Game, Sagaland, The Wizard of Oz",
+        "African Star, Diamond Hunt",
+        "Fanton",
+        "Deluxe Monopoly",
+        "Frank Herbert's Dune",
+        "Carcassonne Jubilee Edition",
+        "Excalibur, Mini Stratego, Original Stratego, Royal Stratego",
+        "Sherlock Holmes: Detective Asesor",
+        "Axis and Allies",
+        "nan",
+        "Yomi: Fighting Card Game",
+        "Risk!"
+    ],
+    "instance_of": [
+        "board_game"
+    ],
+    "genres": [
+        "horror fiction",
+        "cooperative board game",
+        "wargame",
+        "strategy game",
+        "German-style board game",
+        "abstract strategy game",
+        "deduction game",
+        "historical board game",
+        "mystery fiction",
+        "card game",
+        "roll-and-move",
+        "board wargame",
+        "fantasy",
+        "science fiction"
+    ],
+    "publisher": [
+        "Columbia Games",
+        "Mayfair Games",
+        "Avalon Hill",
+        "GMT Games",
+        "Hasbro",
+        "Playmix",
+        "Asmodee",
+        "Miro Company",
+        "Jumbo Games",
+        "Fantasy Flight Games",
+        "White Wizard Games",
+        "Ravensburger",
+        "nan",
+        "Franckh-Kosmos",
+        "Space Cowboys",
+        "Games Workshop",
+        "Hans im Gl¨¹ck"
+    ],
+    "min_players": [
+        "1",
+        "2",
+        "3"
+    ],
+    "max_players": [
+        "2",
+        "4",
+        "5",
+        "6",
+        "8"
+    ],
+    "publication_year": [
+        "1937",
+        "1951",
+        "1957",
+        "1973",
+        "1977",
+        "1979",
+        "1981",
+        "1983",
+        "1986",
+        "1988",
+        "1992",
+        "2000",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2014",
+        "2015",
+        "2017",
+        "1918"
+    ],
+    "based_on": [
+        "The Landlord's Game",
+        "mancala",
+        "Warhammer",
+        "The Lord of the Rings"
+    ],
+    "game_mechanics": [
+        "resource management",
+        "deductive reasoning",
+        "cooperative gameplay"
+    ],
+    "developer": [
+        "Larry Harris",
+        "Reiner Knizia",
+        "Elizabeth Magie",
+        "Klaus Teuber",
+        "Darwin Kastle",
+        "Albert Lamorisse",
+        "Bruce Glassco",
+        "Klaus-J¨¹rgen Wrede",
+        "Andreas Seyfarth",
+        "Michel Matschoss",
+        "Karen Seyfarth"
+    ],
+    "country_of_origin": [
+        "United States of America",
+        "Germany",
+        "Finland"
+    ]
+}

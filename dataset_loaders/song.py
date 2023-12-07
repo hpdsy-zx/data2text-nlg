@@ -67,7 +67,7 @@ class SongDataset(MRToTextDataset):
     def get_slots_to_delexicalize():
         return {
             'simple':{'name','publication_date','publication_year','rating','is_from_album'},
-            'list':{'performer','producer','genres','record_label','instance_of'}
+            'list':{'performer','producer','genres','record_label','instance_of','from_album'}
         }
     
 class Song20PercentDataset(SongDataset):
