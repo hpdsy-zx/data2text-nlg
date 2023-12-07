@@ -174,5 +174,16 @@
         "United States of America",
         "Germany",
         "Finland"
-    ]
+    ],
+    "da": [
+        "confirm",
+        "give_opinion",
+        "inform",
+        "recommend",
+        "request",
+        "request_attribute",
+        "request_explanation",
+        "suggest",
+        "verify_attribute"
+        ]
 }

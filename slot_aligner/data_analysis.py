@@ -476,8 +476,8 @@ if __name__ == '__main__':
     #     ser, df = score_slot_realizations(input_path, f'{i.split(" - with DA.csv")[0]}_each.csv', ViggoDataset, f'all',
     #                                     slot_level=True)
 
-    input_path = 'D:\data2text - nlg\data\\board_game'
-    file_name = 'board_gameOneHop.csv'
+    input_path = 'D:\data2text-nlg\data\\board_game'
+    file_name = 'Untitledspreadsheet-Sheet1.csv'
 
     ser, df = score_slot_realizations(input_path, file_name, BoardGameDataset, f'', slot_level=True)
     print(BoardGameDataset.name)

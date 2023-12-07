@@ -9,12 +9,12 @@ class BoardGameDataset(MRToTextDataset):
 
     name = 'board_game'
     delimiters = {
-        'da_beg': '(',
-        'da_end': ')',
+        'da_beg': None,
+        'da_end': None,
         'da_sep': None,
-        'slot_sep': ',',
-        'val_beg': '[',
-        'val_end': ']'
+        'slot_sep': ' ',
+        'val_beg': None,
+        'val_end': None
     }
 
     @staticmethod
